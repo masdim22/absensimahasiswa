@@ -3,7 +3,7 @@
 <%@page import="koneksi.Koneksi"%>
 
 <%
-    // SESSION CHECK
+    
     if (session.getAttribute("user") == null) {
         response.sendRedirect("login.jsp");
         return;
@@ -21,7 +21,7 @@
 <div class="container">
     <h2>Absensi Mahasiswa</h2>
 
-    <!-- FORM ABSENSI -->
+    
     <form method="post">
         <input type="hidden" name="id"
                value="<%= request.getParameter("id") != null ? request.getParameter("id") : "" %>">
@@ -48,7 +48,7 @@
     <%
         Connection con = Koneksi.getConnection();
 
-        // CREATE
+        
         if (request.getParameter("simpan") != null) {
             String sql = "INSERT INTO absensi (nim, tanggal, status) VALUES (?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -59,7 +59,7 @@
             response.sendRedirect("absensi.jsp");
         }
 
-        // UPDATE
+      
         if (request.getParameter("update") != null) {
             String sql = "UPDATE absensi SET nim=?, tanggal=?, status=? WHERE id=?";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -71,7 +71,7 @@
             response.sendRedirect("absensi.jsp");
         }
 
-        // DELETE
+       
         if (request.getParameter("hapus") != null) {
             String sql = "DELETE FROM absensi WHERE id=?";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -81,7 +81,7 @@
         }
     %>
 
-    <!-- TABEL ABSENSI -->
+    
     <table border="1" width="100%" cellpadding="5">
         <tr>
             <th>No</th>

@@ -1,7 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    // SESSION CHECK
     if (session.getAttribute("user") == null) {
         response.sendRedirect("login.jsp");
         return;
@@ -17,20 +16,36 @@
 <body>
 
 <div class="container">
-    <h2>Dashboard</h2>
 
-    <p>Selamat datang, <b><%= session.getAttribute("user") %></b></p>
-<a href="logout.jsp" onclick="return confirm('Yakin ingin logout?')">Logout</a>
+    <!-- HEADER -->
+    <div class="dashboard-header">
+        <h2>Dashboard</h2>
+        <p>Selamat datang, <b><%= session.getAttribute("user") %></b></p>
+    </div>
 
-    <hr>
+    <!-- MENU -->
+    <div class="dashboard-menu">
 
-    <ul>
-        <li><a href="mahasiswa.jsp">Data Mahasiswa</a></li>
-        <li><a href="absensi.jsp">Absensi Mahasiswa</a></li>
-        <li><a href="logout.jsp">Logout</a></li>
-    </ul>
+        <a href="mahasiswa.jsp" class="dashboard-card">
+            <h3>📘 Data Mahasiswa</h3>
+            <p>Kelola data mahasiswa</p>
+        </a>
+
+        <a href="absensi.jsp" class="dashboard-card">
+            <h3>📝 Absensi Mahasiswa</h3>
+            <p>Input dan lihat absensi</p>
+        </a>
+
+        <a href="logout.jsp" 
+           class="dashboard-card logout"
+           onclick="return confirm('Yakin ingin logout?')">
+            <h3>🚪 Logout</h3>
+            <p>Keluar dari sistem</p>
+        </a>
+
+    </div>
+
 </div>
 
 </body>
 </html>
-

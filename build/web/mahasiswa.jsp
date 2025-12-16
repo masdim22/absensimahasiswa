@@ -13,7 +13,7 @@
 <div class="container">
     <h2>Data Mahasiswa</h2>
 
-    <!-- FORM INPUT MAHASISWA -->
+    
     <form method="post">
         <input type="hidden" name="id" value="<%= request.getParameter("id") != null ? request.getParameter("id") : "" %>">
 
@@ -32,11 +32,11 @@
 
     <hr>
 
-    <!-- PROSES CREATE & UPDATE -->
+    
     <%
         Connection con = Koneksi.getConnection();
 
-        // SIMPAN DATA (CREATE)
+        
         if (request.getParameter("simpan") != null) {
             String sql = "INSERT INTO mahasiswa (nim, nama, jurusan) VALUES (?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -47,7 +47,7 @@
             response.sendRedirect("mahasiswa.jsp");
         }
 
-        // UPDATE DATA
+        
         if (request.getParameter("update") != null) {
             String sql = "UPDATE mahasiswa SET nim=?, nama=?, jurusan=? WHERE id=?";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -59,7 +59,7 @@
             response.sendRedirect("mahasiswa.jsp");
         }
 
-        // DELETE DATA
+        
         if (request.getParameter("hapus") != null) {
             String sql = "DELETE FROM mahasiswa WHERE id=?";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -69,7 +69,7 @@
         }
     %>
 
-    <!-- TABEL DATA MAHASISWA (READ) -->
+    
     <table border="1" width="100%" cellpadding="5">
         <tr>
             <th>No</th>
