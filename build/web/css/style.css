@@ -1,0 +1,151 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f6f9;
+    color: #2c3e50;
+}
+
+
+.container {
+    width: 460px;
+    margin: 80px auto;
+    background: #ffffff;
+    padding: 28px 30px;
+    border-radius: 10px;
+    border: 1px solid #e3e6ea;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* =====================
+   HEADING
+===================== */
+h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* =====================
+   FORM
+===================== */
+input, select {
+    width: 100%;
+    padding: 11px 12px;
+    margin-top: 12px;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    border-color: #4a6cf7;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74,108,247,.15);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 18px;
+    border-radius: 6px;
+    border: none;
+    background: #4a6cf7;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3b5bdb;
+}
+
+a {
+    color: #4a6cf7;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.dashboard-header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.dashboard-menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.dashboard-card {
+    border: 1px solid #e3e6ea;
+    border-radius: 8px;
+    padding: 18px;
+    background: #ffffff;
+    transition: .25s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+}
+
+.dashboard-card h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+}
+
+.dashboard-card p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.dashboard-card.logout {
+    background: #fff5f5;
+    border-color: #f1c0c0;
+}
+
+.dashboard-card.logout h3 {
+    color: #c0392b;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+table th {
+    background: #f1f3f5;
+    padding: 10px;
+    border-bottom: 2px solid #dee2e6;
+    text-align: left;
+}
+
+table td {
+    padding: 9px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+table tr:hover {
+    background: #f8f9fb;
+}
